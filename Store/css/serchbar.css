@@ -1,0 +1,84 @@
+﻿* {
+    font-family: Roboto,Arial;
+}
+
+.nav_search {
+    box-shadow: -1px 7px 12px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 7px 12px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 7px 12px -3px rgba(0,0,0,0.75);
+    background: #FFD700;
+    width: 100%;
+    position: sticky;
+    
+}
+/*Search Bar CSS*/
+#search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#search-btn {
+    margin-left: 15px;
+}
+/*Temp Controls CSS*/
+#temp-control {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+/**Weather panel CSS**/
+
+#weather-info {
+    position: relative;
+    top: 10px;
+    height: 500px;
+}
+
+/************City + Current Weather CSS*****/
+
+.first-row { /*Includes both city and current temperature */
+    display: inline-block;
+    margin-top: 30px;
+}
+
+#location {
+    position: relative;
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+
+#current-temp {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    font-size: 30px;
+}
+
+/****** 5 day forecast CSS *********/
+#forecast {
+    position: relative;
+    margin: auto;
+}
+
+.forecast-days {
+    display: inline-block;
+    padding-top: 20px;
+    height: 125px;
+    width: 125px;
+}
+
+/*Icons*/
+#curr-icon {
+    width: 75px;
+    height: 75px;
+}
+.Profile{
+    display:flex;
+}
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    z-index: 2;
+   
+    background: black;
+}

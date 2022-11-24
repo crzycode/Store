@@ -1,0 +1,33 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body style="background: #F5F7FA;">
+    @if (Session["email"] != null || Session["mobile"] != null)
+    {
+        @RenderPage("~/Views/Component/Searchbar.cshtml");
+        @RenderPage("~/Views/Component/Slider.cshtml");
+        @RenderPage("~/Views/Component/navbar.cshtml");
+
+    }
+    @RenderBody()
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Js/Registration.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            postuser();
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿.product_wrapper {
+    margin: 8px 8px 5px 5px;
+    background: white;
+    height: 550px;
+    width: 19%;
+    padding: unset;
+    box-shadow: -1px 7px 12px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 7px 12px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 7px 12px -3px rgba(0,0,0,0.75);
+}
+.product_name {
+    position: relative;
+    width: 100% !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin: unset;
+    padding: unset;
+}
+.image_adjust {
+    width: 100%;
+    height: 350px;
+}
+.Free_delevery {
+    bottom: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 21%;
+    margin-right: 0%;
+    
+}
+.pagination {
+    display: flex;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 10px;
+    justify-content:center;
+}
+
+
+.next-page .page-link {
+    width: 100px !important;
+    
+    background: black;
+    -webkit-box-shadow: 0px 13px 28px -8px rgb(0 0 0 / 50%);
+    -moz-box-shadow: 0px 13px 28px -8px rgba(0,0,0,0.5);
+    color: white;
+    font-weight: bold;
+}
+.previous-page .page-link {
+    width: 100px !important;
+  
+    background: black;
+    -webkit-box-shadow: 0px 13px 28px -8px rgb(0 0 0 / 50%);
+    -moz-box-shadow: 0px 13px 28px -8px rgba(0,0,0,0.5);
+    color: white;
+    font-weight: bold;
+}
+.current-page .page-link {
+    width: 50px !important;
+    background: black;
+    -webkit-box-shadow: 0px 13px 28px -8px rgb(0 0 0 / 50%);
+    -moz-box-shadow: 0px 13px 28px -8px rgba(0,0,0,0.5);
+    color: white;
+    font-weight: bold;
+    display:flex !important;
+}
+.pagination li.activate {
+    background-color: none !important;
+}
+.activate {
+    background: black !important;
+    width: 100px;
+  
+    display: flex !important;
+}
+    .activate .page-link {
+        background: black !important;
+        border: none;
+        outline: none;
+        transition: width 2s transform 2s ease-in-out;
+        text-align: center;
+      
+    }

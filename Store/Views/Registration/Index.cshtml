@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="alertdialog">
+  
+
+    <div class="cd-popup" role="alert">
+        <div class="cd-popup-container" style="transform: translate(0%, 100%)">
+            <p><span class="message"></span></p>
+            
+            <a href="#0" class="cd-popup-close img-replace">Close</a>
+        </div>
+    </div>
+</div>
+    <section>
+        <div class="container">
+            <div class="user signinBx">
+                <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div>
+                <div class="formBx">
+                    <form action="" onsubmit="return false;">
+                        <h2>Sign In</h2>
+                        <input type="text" name="" placeholder="Email" id="Login_email" />
+                        <input type="password" name="" placeholder="Password" id="Login_password"/>
+                        <input type="submit" name="" value="Login" id="user_login"/>
+                        <p class="signup">
+                            Don't have an account ?
+                            <a href="#" onclick="toggleForm();">Sign Up.</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div class="user signupBx">
+                <div class="formBx">
+                    <form action="" onsubmit="return false;">
+                        <h2>Create an account</h2>
+                        <input type="text" name="" placeholder="FullName" id="fullname" />
+                        <input type="email" name="" placeholder="Email Address" id="email" />
+                        <input type="Number" name="" placeholder="Mobile Number" id="mobile" />
+                        <input type="password" name="" placeholder="Create Password" id="password" />
+                        <input type="password" name="" placeholder="Confirm Password" id="confirmpassword" />
+                        <input type="submit" name="" value="Sign Up" id="submituserdata" />
+                        <p class="signup">
+                            Already have an account ?
+                            <a href="#" onclick="toggleForm();">Sign in.</a>
+                        </p>
+                    </form>
+                </div>
+                <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div>
+            </div>
+        </div>
+    </section>
+  
+
+
