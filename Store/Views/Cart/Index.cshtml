@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/cart.css" rel="stylesheet" />
+<div class="container-fluid" style="margin-top:40px;">
+    <div class="row cart_container ">
+      <input id="cart_user" type="text" name="name" value="@Session["user"]" style="display:none;" />
+        <div class="col-lg-9 cart_section">
+            <div class="cart_body">
+                @*<div class="row" style="display:flex;height: 150px;border-bottom: 1px solid black;">
+                    <div class="col-lg-3 img_section"> <img class="imgsection_img" src="https://images-na.ssl-images-amazon.com/images/I/513cBC8PqpL.jpg" alt="Alternate Text" /> </div>
+                    <div class="col-lg-7">
+                        <span class="cart_product_name">Guillow Airplane Design Studio with Travel Case Building Kit</span>
+                        <br />
+                        <br />
+                        <div style="display:flex; align-items:center; position:absolute;bottom:10px;">
+                            Quantity: &nbsp; &nbsp;
+                            <div onclick="Addtocart()" class="button_plus">+</div>
+                            <input id="quantity_counter" placeholder="QTY" type="text" name="name" value="" class="quatitiy" style="border-bottom: 0px solid #000; box-shadow: 0 0px 0 0 #000;" />
+                            <div onclick="removecart()" class="button_minus">-</div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="text-align:end;"><span class="cart_product_price">222</span> </div>
+
+                </div>*@
+            </div>
+          
+            <div class="totalamount">Total Amount: &nbsp; &nbsp;<span style=" text-align: end;" class="totalprice"></span></div>
+            
+        </div>
+        <div class="col-lg-3 proceed_section">
+            <span>Part of your first order qualifies for FREE Delivery. Select this option at checkout. Details</span>
+            <br />
+            <br />
+            <span class="h3">Subtotal Amount: <span class="totalprice" ></span></span>
+            <br />
+            <br />
+            <div class="cart_btn_filled">Proceed Items</div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Js/cart.js"></script>

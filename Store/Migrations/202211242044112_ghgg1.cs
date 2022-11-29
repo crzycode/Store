@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class mangalj : DbMigration
+    public partial class ghgg1 : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Users", "created_at", c => c.String());
+            RenameTable(name: "dbo.A_Products", newName: "Products");
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Users", "created_at", c => c.Int(nullable: false));
+            RenameTable(name: "dbo.Products", newName: "A_Products");
         }
     }
 }

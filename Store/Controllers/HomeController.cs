@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Store.Models.DataContexts;
+using Store.Models.Functions;
 using Store.Models.Tables;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Store.Controllers
         public ActionResult Index()
         {
             
-            if(Session["email"] != null || Session["mobile"] != null) 
+            if(Session["user"] != null) 
             {
 
                 return View();
@@ -24,12 +25,14 @@ namespace Store.Controllers
             return RedirectToAction("Index", "Registration");
             
         }
+       
+     
         public dynamic allproduct()
         {
             List<dynamic> da = new List<dynamic>();
+
           
-            
-            var data = db.A_products.Take(1000).ToList();
+            var data = db.A_products.Take(50).ToList();
             
             for (int i = 0; i < data.Count; i++)
             {
@@ -71,12 +74,13 @@ namespace Store.Controllers
                     string product_name = string.Join(" ", pro[0]);
                     productname.Add(product_name);
                 }
+                string[] prices = data[i].Selling_Price.Split('$');
                 var dat = productname.ToList();
                 A_Products.Product_Name = dat[0];
                 A_Products.Category = category[0];
                 A_Products.Images = data[i].Images;
-                A_Products.Selling_Price = data[i].Selling_Price;
-                A_Products.Uniq_Id = data[i].Uniq_Id;
+                A_Products.Selling_Price = " ₹"+prices[1];
+                A_Products.product_id = data[i].product_id;
                
 
                 da.Add(A_Products);

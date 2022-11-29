@@ -1,49 +1,51 @@
-﻿
-    <!--Fonts-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!---Materialize CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+﻿<!--Fonts-->
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!---Materialize CSS-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 
-    <link href="~/css/serchbar.css" rel="stylesheet" />
+<link href="~/css/serchbar.css" rel="stylesheet" />
 
-    <div class="nav_search">
-        <div class="container-fluid" style="display:flex; justify-content:space-between;align-items:center;">
-            <div class="col-lg-2 col-md-2"> <h5>manal singh </h5></div>
-            <div class="col-lg-8 col-md-10">
-                <div id="search-wrapper">
-                    <form id="searchbar">
-                        <div class="row">
-                            <div class="input-group">
-                                <input type="text" class="form-control text-center" id="city-input" placeholder="Search Product" style="border-bottom: 0px solid #000; box-shadow: 0 1px 0 0 #000;">
-                                <span class="input-group-btn">
-                                    <button class="btn" type="button" id="search-btn">
-                                        <i class="fa fa-search">
-                                        </i>
-                                    </button>
-                                </span>
-                                <!-- /input-group -->
-                            </div>
-
-                            <!--row-->
+<div class="nav_search">
+    <div class="container-fluid" style="display:flex; justify-content:space-between;align-items:center;">
+        <div class="col-lg-2 col-md-2"> <h5>manal singh </h5></div>
+        <div class="col-lg-8 col-md-10">
+            <div id="search-wrapper">
+                <form id="searchbar">
+                    <div class="row">
+                        <div class="input-group">
+                            <input type="text" class="form-control text-center" id="city-input" placeholder="Search Product" style="border-bottom: 0px solid #000; box-shadow: 0 1px 0 0 #000;">
+                            <span class="input-group-btn">
+                                <button class="btn" type="button" id="search-btn">
+                                    <i class="fa fa-search">
+                                    </i>
+                                </button>
+                            </span>
+                            <!-- /input-group -->
                         </div>
-                    </form>
-                    <!--search-wrapper-->
-                </div>
+
+                        <!--row-->
+                    </div>
+                </form>
+                <!--search-wrapper-->
             </div>
-            <div class="col-lg-2 col-md-2">
-                <div class="Profile">
-                        <div class="col-lg-4 col-md-3">mangal</div>
-                        <div class="col-lg-4 col-md-3">mangal</div>
-                        <div class="col-lg-4 col-md-3">mangal</div>
-                    
-
-                </div>
-            </div>
-
-
-
-            <!--End of container div-->
         </div>
+        <div class="col-lg-2 col-md-2">
+            <div class="Profile">
+                <div class="col-lg-4 col-md-3"><i class="fa-regular fa-cart-shopping"></i></div>
+                <div class="col-lg-4 col-md-3"><i class="fa-regular fa-cart-plus"></i></i></div>
+                <div class="col-lg-4 col-md-3" style="display:flex;"><i onclick="gotocart()" style="color:black; font-size:30px;" class="fa-solid fa-cart-shopping fa-2x"></i>&nbsp; <span class="cart_circle">0</span></div>
+
+
+            </div>
+        </div>
+
+
+
+        <!--End of container div-->
     </div>
-    
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+<script src="~/Js/Details.js"></script>
 

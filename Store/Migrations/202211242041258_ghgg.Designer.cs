@@ -7,13 +7,13 @@ namespace Store.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class ghgg : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ghgg));
         
         string IMigrationMetadata.Id
         {
-            get { return "202211221907242_initial"; }
+            get { return "202211242041258_ghgg"; }
         }
         
         string IMigrationMetadata.Source

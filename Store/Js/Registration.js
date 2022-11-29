@@ -5,7 +5,9 @@
 };
 
 jQuery(document).ready(function ($) {
+    checklocalstorage();
     Loginuser();
+   
     $('.cd-popup-trigger').on('click', function (event) {
         event.preventDefault();
 
@@ -89,7 +91,49 @@ $('#confirmpassword').keyup(function () {
 });
 
 
+function checklocalstorage() {
+    var data = document.baseURI;
+    
+    if (data === "https://localhost:44382/Registration") {
+        if (localStorage.length > 2) {
 
+            var d = {
+
+
+                Mobile: parseInt(localStorage.getItem('username')),
+                Password: localStorage.getItem('password')
+
+            }
+            $.ajax({
+                type: 'post',
+                url: 'https://localhost:44382/Registration/Login',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(d),
+                success: function (data) {
+
+                    if (data[1].Message == "success") {
+                        window.localStorage.setItem('username', data[0].user_email);
+                        window.localStorage.setItem('password', data[0].user_password);
+                        mangal = false;
+                        window.location.href = "https://localhost:44382/";
+                    } else {
+                        $('.message').html("<span style=" + "color:red;" + "> User Not Valid</span>")
+                        $('.cd-popup').addClass('is-visible');
+                        setTimeout(function () {
+                            $('.cd-popup').removeClass('is-visible');
+                        }, 1000)
+                    }
+
+
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+    }
+}
 function postuser() { 
     
     $('#submituserdata').click(function () {
@@ -202,30 +246,35 @@ function Loginuser() {
             Password: $('#Login_password').val(),
             
         }
-        $.ajax({
-            type: 'post',
-            url: 'https://localhost:44382/Registration/Login',
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(u),
-            success: function (data) {
+            $.ajax({
+                type: 'post',
+                url: 'https://localhost:44382/Registration/Login',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(u),
+                success: function (data) {
 
-                if (data[0] == "success") {
-                    window.location.href = "https://localhost:44382/";
-                } else {
-                    $('.message').html("<span style=" + "color:red;" + "> User Not Valid</span>")
-                    $('.cd-popup').addClass('is-visible');
-                    setTimeout(function () {
-                        $('.cd-popup').removeClass('is-visible');
-                    }, 1000)
+                    if (data[1].Message == "success") {
+                        window.localStorage.setItem('username', data[0].user_email);
+                        window.localStorage.setItem('password', data[0].user_password);
+
+                        window.location.href = "https://localhost:44382/";
+                    } else {
+                        $('.message').html("<span style=" + "color:red;" + "> User Not Valid</span>")
+                        $('.cd-popup').addClass('is-visible');
+                        setTimeout(function () {
+                            $('.cd-popup').removeClass('is-visible');
+                        }, 1000)
+                    }
+
+
+                },
+                error: function (error) {
+                    console.log(error)
                 }
-                    
-                
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        })
+            })
+        
+       
     })
 }
 

@@ -140,30 +140,34 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\TotalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202211221907242_initial.cs" />
-    <Compile Include="Migrations\202211221907242_initial.designer.cs">
-      <DependentUpon>202211221907242_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202211242041258_ghgg.cs" />
+    <Compile Include="Migrations\202211242041258_ghgg.designer.cs">
+      <DependentUpon>202211242041258_ghgg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202211221945145_initials.cs" />
-    <Compile Include="Migrations\202211221945145_initials.designer.cs">
-      <DependentUpon>202211221945145_initials.cs</DependentUpon>
+    <Compile Include="Migrations\202211242044112_ghgg1.cs" />
+    <Compile Include="Migrations\202211242044112_ghgg1.designer.cs">
+      <DependentUpon>202211242044112_ghgg1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202211222349295_mangal.cs" />
-    <Compile Include="Migrations\202211222349295_mangal.designer.cs">
-      <DependentUpon>202211222349295_mangal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202211222355312_mangalj.cs" />
-    <Compile Include="Migrations\202211222355312_mangalj.designer.cs">
-      <DependentUpon>202211222355312_mangalj.cs</DependentUpon>
+    <Compile Include="Migrations\202211242048179_ghg.cs" />
+    <Compile Include="Migrations\202211242048179_ghg.designer.cs">
+      <DependentUpon>202211242048179_ghg.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataContexts\DataContext.cs" />
+    <Compile Include="Models\Functions\AddCart.cs" />
+    <Compile Include="Models\Functions\cartdataget.cs" />
+    <Compile Include="Models\Functions\Cart_product.cs" />
+    <Compile Include="Models\Functions\Details.cs" />
     <Compile Include="Models\Functions\Error.cs" />
+    <Compile Include="Models\Functions\JsonManagement.cs" />
     <Compile Include="Models\Functions\Login.cs" />
     <Compile Include="Models\Functions\UserCheck.cs" />
     <Compile Include="Models\Tables\Country.cs" />
@@ -183,6 +187,8 @@
     <Content Include="Content\imags\mikkel-bech-yjAFnkLtKY0-unsplash.jpg" />
     <Content Include="Content\imags\rachit-tank-2cFZ_FB08UM-unsplash.jpg" />
     <Content Include="Content\imags\revolt-164_6wVEHfI-unsplash.jpg" />
+    <Content Include="css\cart.css" />
+    <Content Include="css\Details.css" />
     <Content Include="css\main.css" />
     <Content Include="css\navbar.css" />
     <Content Include="css\serchbar.css" />
@@ -191,6 +197,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Js\cart.js" />
+    <Content Include="Js\Details.js" />
     <Content Include="Js\main.js" />
     <Content Include="Js\Registration.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -222,9 +230,13 @@
     <Content Include="Views\Component\navbar.cshtml" />
     <Content Include="Views\Component\Searchbar.cshtml" />
     <Content Include="Views\Component\Slider.cshtml" />
+    <Content Include="Views\Details\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Cart\" />
+    <Folder Include="Views\Total\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -240,17 +252,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202211221907242_initial.resx">
-      <DependentUpon>202211221907242_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202211242041258_ghgg.resx">
+      <DependentUpon>202211242041258_ghgg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202211221945145_initials.resx">
-      <DependentUpon>202211221945145_initials.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202211242044112_ghgg1.resx">
+      <DependentUpon>202211242044112_ghgg1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202211222349295_mangal.resx">
-      <DependentUpon>202211222349295_mangal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202211222355312_mangalj.resx">
-      <DependentUpon>202211222355312_mangalj.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202211242048179_ghg.resx">
+      <DependentUpon>202211242048179_ghg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

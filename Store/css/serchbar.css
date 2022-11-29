@@ -8,8 +8,8 @@
     -moz-box-shadow: -1px 7px 12px -3px rgba(0,0,0,0.75);
     background: #FFD700;
     width: 100%;
-    position: sticky;
-    
+    position: fixed;
+    z-index:12;
 }
 /*Search Bar CSS*/
 #search-wrapper {
@@ -81,4 +81,19 @@
     z-index: 2;
    
     background: black;
+}
+.cart_circle {
+    border-radius: 100px;
+    background: black;
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    text-align: center;
+    right: -4px;
+    top: -14px;
+    color: white;
+    font-size: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }

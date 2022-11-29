@@ -1,0 +1,151 @@
+﻿@model Store.Models.Functions.Details
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<link href="~/css/Details.css" rel="stylesheet" />
+@foreach (var item in Model.Product)
+{
+    <div class="container-fluid">
+        @* <select>
+                <option value="value">mangal</option>
+            </select>*@
+
+        <div class="row" style="position:relative;top:60px; margin-left:30px;"> <h6>@item.Category</h6></div>
+        <div class="row" style="display:flex; position:relative; top:60px;">
+            <div class="col-lg-4">
+            
+                <div class="image_section">
+
+                    <div class="big_img_section">
+                        <img class="big_img" src="@item.Images" alt="Alternate Text" />
+                    </div>
+                    <div class="small_image_section">
+                        @for (int i = 0; i < Model.image.Length - 1; i++)
+                        {
+                            <div onclick="replaceimg('@Model.image[i]')" class="images">
+                                <img class="small_img" src="@Model.image[i]" alt="Alternate Text" />
+                            </div>
+                        }
+                    </div>
+                    <a href="~/Views/Details/Index.cshtml">~/Views/Details/Index.cshtml</a>
+                </div>
+
+
+
+            </div>
+            <div class="col-lg-5 product_details_section">
+
+                <div class="product_details">
+                <input id="user" type="text" name="name" value="@Session["user"]" style="display:none;" />
+
+                    <div class="product_name">@item.Product_Name</div>
+
+                    <div class="product_price_section">
+                        <span class="discount_section">-@Model.discount%</span> &nbsp;&nbsp;
+                        <span class="price"> @Model.price</span><br />
+                                                                
+                        <a href="~/Views/Details/Index.cshtml">~/Views/Details/Index.cshtml</a>
+                        <span class="mrp_section"> <span class="mrp">MRP</span> <s>₹  @Model.mrp</s></span>
+                        <br />
+                        <span>Inclusive of all taxes</span>
+                    </div>
+                    <div>
+                        <p><span class="btn_outline">@item.Shipping_Weight</span></p>
+
+                    </div>
+
+
+                    @*                <h4>@item.Sku</h4>
+                        <h4>@item.Variants</h4>*@
+
+
+
+                    <div class="specification" style="list-style:none; border-bottom:1px solid grey; margin-bottom:10px;">
+                        @for (int i = 0; i < Model.specification.Length; i++)
+                        {
+                            string[] name = Model.specification[i].Split(':');
+                            if (name.Length >= 2)
+                            {
+                                <div style="display: flex; justify-content: space-between;"><li class="elips">@name[0]</li><li class="elips">@name[1]</li></div>
+
+                                <br />
+                            }
+
+                        }
+
+                    </div>
+                    <div style="border-bottom: 1px solid black; margin-bottom:10px;">
+                        <h5>About</h5>
+                        @for (int i = 0; i < Model.about.Length; i++)
+                        {
+
+                            <li>@Model.about[i]</li><br />
+
+                        }
+
+
+
+                    </div>
+                    @if (item.Technical_Details != null)
+                    {
+                        <h6>
+                            <h5>Product Specification</h5>
+
+                            @item.Technical_Details
+                        </h6>
+                    }
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+            <div class="col-lg-3 ">
+                <div class="cart_section">
+                    <div style="display:flex;"> <span style="font-size:20px;">₹</span> &nbsp;<span style="font-size:30px;">@Model.price</span> </div>
+                    <div>
+                        FREE delivery Sunday, 27 November. Order within 7 hrs 34 mins. Details
+                    </div>
+
+                    <br />
+                    <div>Select Delivery Location</div>
+                    <br />
+                    <div>In Stock</div>
+                    <br />
+                    <div>
+                        Sold by Express Max and Fulfilled by mangal.
+                    </div>
+                    <br />
+
+                    <div style="display:flex; align-items:center;">
+                        Quantity: &nbsp; &nbsp;
+                        <div onclick="Addtocart(@Model.product_id,@Model.price)" class="button_plus">+</div>
+                        <input id="quantity_counter" type="text" name="name" value="1" class="quatitiy" style="border-bottom: 0px solid #000; box-shadow: 0 0px 0 0 #000;" />
+                        <div onclick="removecart(@Model.product_id,@Model.price)" class="button_minus">-</div>
+
+                    </div>
+                    <br />
+
+                    <div onclick="Addtocart(@Model.product_id)" class="cart_btn_filled" style="width:100%; margin-bottom:10px;">Add To Cart</div><br />
+
+
+                    <div class="cart_btn_outline" style="width: 100%; margin-bottom: 10px;">Buy Now</div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+}
+
+<script src="~/Js/Details.js"></script>
+
+

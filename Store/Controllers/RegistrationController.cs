@@ -56,13 +56,26 @@ namespace Store.Controllers
             var email = db.users.Where(x => x.User_email == l.Email && x.User_password == l.Password).ToList();
 
             var mobile = db.users.Where(x => x.User_mobile == l.Mobile && x.User_password == l.Password).ToList();
+
+
+
             if (email.Count == 1)
             {
                 foreach (var item in email)
                 {
-                    Session["email"] = item.User_email;
+                    Session["user"] = item.User_email;
+                    dynamic local_user = new
+                    {
+                        user_email = item.User_email,
+                        user_password = item.User_password
+                    };
+                    Messsage.Add(local_user);
                 }
-                Messsage.Add("success");
+                dynamic message = new
+                {
+                    Message = "success"
+                };
+                Messsage.Add(message);
                 var json1 = JsonConvert.SerializeObject(Messsage);
                 return json1;
             
@@ -71,15 +84,25 @@ namespace Store.Controllers
             {
                 foreach (var item in mobile)
                 {
-                    Session["mobile"] = item.User_mobile;
+                    Session["user"] = item.User_mobile;
+                    dynamic local_user = new
+                    {
+                        user_email = item.User_mobile,
+                        user_password = item.User_password
+                    };
+                    Messsage.Add(local_user);
                 }
-                Messsage.Add("success");
+                dynamic message = new
+                {
+                    Message = "success"
+                };
+                Messsage.Add(message);
                 var json2 = JsonConvert.SerializeObject(Messsage);
                 return json2;
                 
             }
             Messsage.Add("User Not Valid");
-            var json = JsonConvert.SerializeObject(Messsage);
+            string json = JsonConvert.SerializeObject(Messsage);
             return json;
         }
     }

@@ -7,25 +7,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
 <body style="background: #F5F7FA;">
-    @if (Session["email"] != null || Session["mobile"] != null)
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <input id="cart_user" type="text" name="name" value="@Session["user"]" style="display:none;" />
+    @if (Session["user"] != null)
     {
+
         @RenderPage("~/Views/Component/Searchbar.cshtml");
-        @RenderPage("~/Views/Component/Slider.cshtml");
+        string m = Request.Url.AbsoluteUri;
+        string[] d = m.Split('/');
+        if (m == "https://localhost:44382/")
+        {
+            @RenderPage("~/Views/Component/Slider.cshtml");
+        }
+
+
         @RenderPage("~/Views/Component/navbar.cshtml");
 
     }
     @RenderBody()
 
 
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
     <script src="~/Js/Registration.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
-
+  
     <script>
         $(document).ready(function () {
 
-            postuser();
+         postuser();
+            
 
+            var u = $('#cart_user').val();
+            $.ajax({
+                type: 'POST',
+                url: 'https://localhost:44382/Cart/total_count/',
+                data: { user: u },
+                dataType: 'JSON',
+                success: function (data) {
+
+                    $('.cart_circle').html(data)
+
+
+                },
+                error: function (error) {
+                }
+            })
+            
         });
     </script>
 

@@ -1,0 +1,20 @@
+[
+{
+    "user": "mangal@gmail.com",
+    "total": 4,
+    "totalamount": 538,
+    "product_quantity": {
+      "1": 1,
+      "2": 3
+    }
+  },
+  {
+    "user": "mangkngal@gmail.com",
+    "total": 4,
+    "totalamount": 77,
+    "product_quantity": {
+      "4": 2,
+      "6": 2
+    }
+  }
+]

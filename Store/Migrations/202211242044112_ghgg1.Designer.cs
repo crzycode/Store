@@ -7,13 +7,13 @@ namespace Store.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class mangalj : IMigrationMetadata
+    public sealed partial class ghgg1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(mangalj));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ghgg1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202211222355312_mangalj"; }
+            get { return "202211242044112_ghgg1"; }
         }
         
         string IMigrationMetadata.Source

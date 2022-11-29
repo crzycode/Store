@@ -7,13 +7,13 @@ namespace Store.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class mangal : IMigrationMetadata
+    public sealed partial class ghg : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(mangal));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ghg));
         
         string IMigrationMetadata.Id
         {
-            get { return "202211222349295_mangal"; }
+            get { return "202211242048179_ghg"; }
         }
         
         string IMigrationMetadata.Source

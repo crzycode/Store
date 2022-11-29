@@ -18,7 +18,7 @@ namespace Store.Models.DataContexts
             return new DataContext();
         }
         public DbSet<Country> countries { get; set; }
-        public DbSet<A_Products> A_products { get; set; }
+        public DbSet<Product> A_products { get; set; }
         public DbSet<User> users { get; set; }
 
     }

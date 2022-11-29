@@ -13,11 +13,11 @@ $(document).ready(function () {
             var html = '';
             for (var i = 0; i < data.length; i++) {
                 html +=' <div class="col-lg-3 col-md-4 col-sm-6 product_wrapper card">'
-                html += '<div class="row"> <img class="image_adjust" src="' + data[i].Images +'" alt="Alternate Text" /></div>'
+                html += '<div class="row"> <img onclick="gotobuy(' + data[i].product_id +')" class="image_adjust" src="' + data[i].Images +'" alt="Alternate Text" /></div>'
                 html += '<div class="row text-center" style="padding: 10px 10px 10px 10px;">'
                 html += '<span class="h3 product_name">' + data[i].Product_Name + '</span><br />'
-                html += '<span class="h5 product_name">' + data[i].Category +'</span><br />'
-                html += '<span class="h3 product_name">' + data[i].Selling_Price +'</span><br />'
+                html += '<span class="h5 product_name">' + data[i].Category +'</span><br /><br /><br />'
+                html += '<span class="h3 product_price">' + data[i].Selling_Price +'</span><br />'
                 html += '<span class="Free_delevery">Free Delevery by mangal singh</span>'
                 html+=' </div>'
                 html+='</div>'
@@ -91,6 +91,28 @@ $(document).ready(function () {
    
 
 })
+
+function gotobuy(id) {
+    $.ajax({
+        type: 'post',
+        url: 'https://localhost:44382/Details/details',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+       /* data: JSON.stringify({id:id}),*/
+        success: function (data) {
+            console.log(data)
+            if (data.Message == "Success") {
+               
+                window.location.href = "https://localhost:44382/Details/Index/" + id;
+            }
+        },
+        error: function (error) {
+            console.log("rr")
+        }
+
+    })
+}
+
 
 
 

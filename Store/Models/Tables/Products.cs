@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Store.Models.Tables
 {
-    public class A_Products
+    public class Product
     {
         [Key]
         public int product_id { get; set; }
