@@ -20,7 +20,8 @@ function Addtocart(id, m) {
     }
     $.ajax({
         type: 'POST',
-        url: 'https://localhost:44382/Cart/addtocart/',
+        url: 'http://103.255.39.101:80/Store/Cart/addtocart/',
+        crossDomain: true,
         dataType:'JSON',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(c),
@@ -43,7 +44,8 @@ function removecart(id, m) {
     }
     $.ajax({
         type: 'POST',
-        url: 'https://localhost:44382/Cart/removefromcart/',
+        url: 'http://103.255.39.101:80/Store/Cart/removefromcart/',
+        crossDomain: true,
         dataType: 'JSON',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(c),
@@ -60,7 +62,7 @@ function removecart(id, m) {
 }
 function gotocart() {
    
-   window.location.href = "https://localhost:44382/Cart/Index"
+    window.location.href = 'http://103.255.39.101:80/Store/Cart/Index/'
 }
 function TryParseInt(str, defaultValue) {
     var retValue = defaultValue;

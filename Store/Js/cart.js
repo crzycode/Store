@@ -8,7 +8,8 @@ function gotocart_page() {
     var user = $('#cart_user').val();
     $.ajax({
         type: 'POST',
-        url: 'https://localhost:44382/Cart/gotocart/',
+        url: 'http://103.255.39.101:80/Store/Cart/gotocart/',
+        crossDomain: true,
         data: { user: user },
         dataType: 'JSON',
         success: function (data) {
@@ -73,7 +74,8 @@ function Add_tocart(id, m) {
     }
     $.ajax({
         type: 'POST',
-        url: 'https://localhost:44382/Cart/addtocart/',
+        url: 'http://103.255.39.101:80/Store/Cart/addtocart/',
+        crossDomain: true,
         dataType: 'JSON',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(c),
@@ -100,7 +102,8 @@ function remove_cart(id,m) {
     }
     $.ajax({
         type: 'POST',
-        url: 'https://localhost:44382/Cart/removefromcart/',
+        url: 'http://103.255.39.101:80/Store/Cart/removefromcart/',
+        crossDomain: true,
         dataType: 'JSON',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(c),

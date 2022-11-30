@@ -94,7 +94,7 @@ $('#confirmpassword').keyup(function () {
 function checklocalstorage() {
     var data = document.baseURI;
     
-    if (data === "https://localhost:44382/Registration") {
+    if (data === "http://103.255.39.101:80/Store/Registration") {
         if (localStorage.length > 2) {
 
             var d = {
@@ -106,7 +106,8 @@ function checklocalstorage() {
             }
             $.ajax({
                 type: 'post',
-                url: 'https://localhost:44382/Registration/Login',
+                url: 'http://103.255.39.101:80/Store/Registration/Login',
+                crossDomain: true,
                 dataType: 'json',
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(d),
@@ -116,7 +117,7 @@ function checklocalstorage() {
                         window.localStorage.setItem('username', data[0].user_email);
                         window.localStorage.setItem('password', data[0].user_password);
                         mangal = false;
-                        window.location.href = "https://localhost:44382/";
+                        window.location.href = "http://103.255.39.101:80/Store/";
                     } else {
                         $('.message').html("<span style=" + "color:red;" + "> User Not Valid</span>")
                         $('.cd-popup').addClass('is-visible');
@@ -168,7 +169,8 @@ function postuser() {
             if (pass === conpass) {
                 $.ajax({
                     type: 'post',
-                    url: 'https://localhost:44382/Registration/Register',
+                    url: 'http://103.255.39.101:80/Store/Registration/Register',
+                    crossDomain: true,
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
                     data: JSON.stringify(u),
@@ -248,7 +250,8 @@ function Loginuser() {
         }
             $.ajax({
                 type: 'post',
-                url: 'https://localhost:44382/Registration/Login',
+                url: 'http://103.255.39.101:80/Store/Registration/Login',
+                crossDomain: true,
                 dataType: 'json',
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(u),
@@ -258,7 +261,7 @@ function Loginuser() {
                         window.localStorage.setItem('username', data[0].user_email);
                         window.localStorage.setItem('password', data[0].user_password);
 
-                        window.location.href = "https://localhost:44382/";
+                        window.location.href = "http://103.255.39.101:80/Store/";
                     } else {
                         $('.message').html("<span style=" + "color:red;" + "> User Not Valid</span>")
                         $('.cd-popup').addClass('is-visible');

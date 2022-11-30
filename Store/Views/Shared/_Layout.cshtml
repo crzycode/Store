@@ -15,7 +15,7 @@
         @RenderPage("~/Views/Component/Searchbar.cshtml");
         string m = Request.Url.AbsoluteUri;
         string[] d = m.Split('/');
-        if (m == "https://localhost:44382/")
+        if (m == "http://103.255.39.101/store")
         {
             @RenderPage("~/Views/Component/Slider.cshtml");
         }
@@ -40,7 +40,7 @@
             var u = $('#cart_user').val();
             $.ajax({
                 type: 'POST',
-                url: 'https://localhost:44382/Cart/total_count/',
+                url: 'http://103.255.39.101:80/Store/Cart/total_count/',
                 data: { user: u },
                 dataType: 'JSON',
                 success: function (data) {

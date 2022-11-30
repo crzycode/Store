@@ -4,7 +4,8 @@ $(document).ready(function () {
     
     $.ajax({
         type: 'Get',
-        url: 'https://localhost:44382/Home/allproduct',
+        url: 'http://103.255.39.101:80/Store/Home/allproduct',
+        crossDomain: true,
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
        
@@ -95,7 +96,8 @@ $(document).ready(function () {
 function gotobuy(id) {
     $.ajax({
         type: 'post',
-        url: 'https://localhost:44382/Details/details',
+        url: 'http://103.255.39.101:80/Store/Details/details',
+        crossDomain: true,
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
        /* data: JSON.stringify({id:id}),*/
@@ -103,7 +105,7 @@ function gotobuy(id) {
             console.log(data)
             if (data.Message == "Success") {
                
-                window.location.href = "https://localhost:44382/Details/Index/" + id;
+                window.location.href = "http://103.255.39.101:80/Store/Details/Index/" + id;
             }
         },
         error: function (error) {

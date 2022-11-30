@@ -1,11 +1,21 @@
 [
 {
-    "user": "mangal@gmail.com",
-    "total": 4,
-    "totalamount": 538,
+    "user": "9867095734",
+    "total": 7,
+    "totalamount": 245,
     "product_quantity": {
-      "1": 1,
-      "2": 3
+      "3": 7
+    }
+  },
+  {
+    "user": "mangal@gmail.com",
+    "total": 45,
+    "totalamount": 4285,
+    "product_quantity": {
+      "1": 9,
+      "2": 18,
+      "4": 14,
+      "3": 4
     }
   },
   {
